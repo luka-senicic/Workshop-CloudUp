@@ -2,6 +2,7 @@ import * as React from 'react';
 
 export interface IProps {
     source : string;
+    onSave();
 }
 
 export default class GiphyViewer extends React.Component<IProps, {}> {
@@ -10,6 +11,9 @@ export default class GiphyViewer extends React.Component<IProps, {}> {
     }
 
     public render() {
-        return <img src={this.props.source} />;
+        return (<div>
+            <img src={this.props.source} />
+            <button onClick={this.props.onSave}>Save</button>
+            </div>);
     }
 }
